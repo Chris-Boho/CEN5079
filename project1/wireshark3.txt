@@ -1,0 +1,26 @@
+GET /my_videos/ HTTP/1.1
+Host: course.kharraz.org
+Connection: keep-alive
+Authorization: Basic ZW5naW46cWF6ZWRjcmZ2
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8
+Accept-Encoding: gzip, deflate
+Accept-Language: en-US,en;q=0.8,de;q=0.6,tr;q=0.4
+
+HTTP/1.1 200 OK
+Date: Thu, 14 Sep 2017 15:50:05 GMT
+Server: Apache/2.4.10 (Debian)
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Length: 464
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: text/html;charset=UTF-8
+
+............]o.0....+..@p.8......)Z.~Dk. ....6.i\..j...6A.P+.*.....{.....$..
+.6..!.t3.%@z.~.L(M..=....Q5..t8%..UnU..`.
+....r5.Q#q.z.t...Q..e.=.0.hVh...D....AR.......U...Z61qzM8S.%XS...R7...h~.K.  j..o.d..s.U.j..T..1.....Y..>.+dT.f&...>...JK.P(.........i..hK..N....>.q.R.v-|.W>Ae.......(.4#..
+.y:.k["....(..0.8H...i...........K.n6jY9..zp........n.%?i.V.r..A4.......=.a..Foz..^t.Q.>|
+p.M?..O....v?/.R........... 
+.E....K......../c1P..Z..6K..q.6..:..{..?"..{.zk?.....

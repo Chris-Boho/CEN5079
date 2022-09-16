@@ -1,0 +1,9 @@
+How to do question 3:
+use wireshark to 'follow' tcp stream for 11192.168.1.9
+
+or 
+
+tshark -r traffic009.dump -z "follow,tcp,hex,220"
+
+226
+196
