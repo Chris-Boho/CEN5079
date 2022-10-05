@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+
+import argparse
+import random
+
+my_parser = argparse.ArgumentParser(prog="xkcdpwgen", description="Generate secure and memorable passwords")
+my_parser.add_argument("-w", "--words", type=int, default='4', help='include WORDS words in the password (default=4)')
+my_parser.add_argument("-c", "--caps", type=int, default='0', help='capitalize the first letter of CAPS random words (default=0)')
+my_parser.add_argument("-n", "--numbers", type=int, default='0', help='insert NUMBERS random numbers in the password (default=0)')
+my_parser.add_argument("-s", "--symbols", type=int, default='0', help='insert SYMBOLS random symbols in the password (default=0)')
+my_args = my_parser.parse_args()
+
+def random_words(word_count):
+    with open('corncob_lowercase.txt') as f:
+        words = random.sample(f.readlines(), word_count)
+        words = [w.rstrip() for w in words]
+    return words
+
+def capitalize(words, amount):
+    chosen_words = random.sample(words, amount)
+    for w in chosen_words:
+        idx = words.index(w)
+        words[idx] = w.capitalize()
+    return words
+
+def numbers(words, amount):
+    chosen_words = random.sample(words, amount)
+    for w in chosen_words:
+        idx = words.index(w)
+        if bool(random.getrandbits(1)):
+            words[idx] = str(random.randrange(10)) + w
+        else:
+            words[idx] = w + str(random.randrange(10)) 
+    return words
+
+def symbols(words, amount):
+    chosen_words = random.sample(words, amount)
+    symbol_list = list(r'~!@#$%^&*.:;')
+    for w in chosen_words:
+        idx = words.index(w)
+        if bool(random.getrandbits(1)):
+            words[idx] = random.choice(symbol_list) + w
+        else:
+            words[idx] = w + random.choice(symbol_list)
+    return words
+
+def main():
+    print("w: ", my_args.words)
+    print("c: ", my_args.caps)
+    print("n: ", my_args.numbers)
+    print("s: ", my_args.symbols)
+    mywords = random_words(my_args.words)
+    print("Words: ", mywords)
+    print("Caps: ", capitalize(mywords, my_args.caps))
+    print("Numbers: ", numbers(mywords, my_args.numbers))
+    print("Symbols: ", symbols(mywords, my_args.symbols))
+
+main()
