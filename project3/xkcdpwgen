@@ -45,14 +45,21 @@ def symbols(words, amount):
     return words
 
 def main():
-    print("w: ", my_args.words)
-    print("c: ", my_args.caps)
-    print("n: ", my_args.numbers)
-    print("s: ", my_args.symbols)
-    mywords = random_words(my_args.words)
-    print("Words: ", mywords)
-    print("Caps: ", capitalize(mywords, my_args.caps))
-    print("Numbers: ", numbers(mywords, my_args.numbers))
-    print("Symbols: ", symbols(mywords, my_args.symbols))
+
+    if my_args.words < 4:
+        print("Error: Not Enough Words...")
+    elif my_args.words < my_args.caps:
+        print("Error: Not Enough Words to Capitalize...")
+    elif my_args.words < my_args.numbers:
+        print("Error: Not Enough Words to add Numbers to...")
+    elif my_args.words < my_args.symbols:
+        print("Error: Not Enough Words to add Symbols to...")
+    else:
+        mywords = random_words(my_args.words)
+        mywords = capitalize(mywords, my_args.caps)
+        mywords = numbers(mywords, my_args.numbers)
+        mywords = symbols(mywords, my_args.symbols)
+        mywords = "".join(mywords)
+        print(mywords)
 
 main()
